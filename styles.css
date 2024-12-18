@@ -40,6 +40,7 @@ h1, h2 {
     max-width: 340px;
     margin: 10px auto;
     display: block;
+    border-radius: 10px;
 }
 
 .options {
