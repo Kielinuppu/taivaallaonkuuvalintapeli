@@ -98,7 +98,15 @@ function getRandomQuestions(count) {
 
 function loadQuestion() {
     const question = currentQuestions[currentQuestion];
-    document.getElementById('question-image').src = question.question;
+    const questionImage = document.getElementById('question-image');
+    questionImage.src = question.question;
+    
+    // Lisätään click handler pääkuvalle
+    questionImage.onclick = () => {
+        if (clicksEnabled) {
+            playQuestionAudio();
+        }
+    };
     
     const options = [question.correct, question.wrong];
     shuffleArray(options);
@@ -109,7 +117,7 @@ function loadQuestion() {
     document.getElementById('next-arrow').style.display = 'none';
     checkButtonClicked = false;
     selectedOption = 0;
-    clicksEnabled = false; // Disable clicks when loading new question
+    clicksEnabled = false;
     
     setupOptionAudioListeners();
     

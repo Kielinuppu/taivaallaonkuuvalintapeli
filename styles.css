@@ -41,6 +41,7 @@ h1, h2 {
     margin: 10px auto;
     display: block;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .options {
